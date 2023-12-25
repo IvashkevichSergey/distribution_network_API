@@ -1,0 +1,78 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="12">
+            <item index="0" class="java.lang.String" itemvalue="simple-crypt" />
+            <item index="1" class="java.lang.String" itemvalue="Flask-Moment" />
+            <item index="2" class="java.lang.String" itemvalue="WTForms" />
+            <item index="3" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="4" class="java.lang.String" itemvalue="zipp" />
+            <item index="5" class="java.lang.String" itemvalue="Flask-WTF" />
+            <item index="6" class="java.lang.String" itemvalue="numpy" />
+            <item index="7" class="java.lang.String" itemvalue="pytils" />
+            <item index="8" class="java.lang.String" itemvalue="Flask-SQLAlchemy" />
+            <item index="9" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="10" class="java.lang.String" itemvalue="Flask-Bootstrap" />
+            <item index="11" class="java.lang.String" itemvalue="Flask" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E128" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N803" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="dict.get" />
+          <option value="dict.setdefault" />
+          <option value="dict.__getitem__" />
+          <option value="dogs.models.Breed.objects" />
+          <option value="dogs.models.Dogs.objects" />
+          <option value="catalog.models.Product.objects" />
+          <option value="catalog.models.Contacts.objects" />
+          <option value="spam.models.Client.objects" />
+          <option value="spam.models.Message.objects" />
+          <option value="spam.models.Spam.objects" />
+          <option value="catalog.models.Version.objects" />
+          <option value="catalog.templates.catalog.forms.StyleFormMixin.fields" />
+          <option value="dogs.forms.StyleFormMixin.fields" />
+          <option value="catalog.models.Category.objects" />
+          <option value="spam.models.Logs.objects" />
+          <option value="users.forms.StyleFormMixin.field" />
+          <option value="users.forms.StyleFormMixin.fields" />
+          <option value="spam.models.Spam.get_status_display" />
+          <option value="blog.models.Blog.objects" />
+          <option value="spam_clients.models.Client.objects" />
+          <option value="spam_messages.models.Message.objects" />
+          <option value="courses.models.Course.objects" />
+          <option value="courses.models.Lesson.objects" />
+          <option value="blog.models.Article.objects" />
+          <option value="courses.models.Payments.objects" />
+          <option value="django.db.models.fields.related.ForeignKey.title" />
+          <option value="django.db.models.fields.related.ForeignKey.email" />
+          <option value="courses.models.Subscription.objects" />
+          <option value="courses.models.Course.object" />
+          <option value="type.with_ui" />
+          <option value="blog.models.Like.objects" />
+          <option value="habits.models.Habits.objects" />
+          <option value="users.models.User.DoesNotExist" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

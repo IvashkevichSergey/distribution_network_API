@@ -1,6 +1,4 @@
 from django.contrib import admin
-from django.utils.html import format_html
-
 from suppliers.models import Supplier, Contacts, Products
 
 
@@ -17,7 +15,9 @@ class SupplierAdmin(admin.ModelAdmin):
         return self.readonly_fields
 
     def admin_action(self, request, queryset):
-        queryset.update(debt=0)
+        if request.user.is_superuser:
+            queryset.update(debt=0)
+        return None
 
 
 @admin.register(Contacts)

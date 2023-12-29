@@ -34,8 +34,8 @@ class Products(models.Model):
 class Supplier(models.Model):
     """Модель поставщиков продукции"""
     name = models.CharField(max_length=100, help_text='название поставщика')
-    contacts = models.ManyToManyField(to=Contacts, help_text='контакты', blank=True, null=True)
-    products = models.ManyToManyField(to=Products, help_text='продукты', blank=True, null=True)
+    contacts = models.ManyToManyField(to=Contacts, help_text='контакты', blank=True)
+    products = models.ManyToManyField(to=Products, help_text='продукты', blank=True)
     provisioner = models.ForeignKey(to='self', on_delete=models.SET_NULL, help_text='поставщик', blank=True, null=True)
     debt = models.DecimalField(max_digits=12, decimal_places=2, help_text='задолженность перед поставщиком', default=0)
     created_at = models.DateTimeField(auto_now_add=True, help_text='дата и время создания')

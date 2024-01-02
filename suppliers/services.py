@@ -8,12 +8,14 @@ from suppliers.serializers import UserSerializer, UserEditSerializer
 
 
 class UserView(generics.CreateAPIView):
+    """Контроллер для регистрации нового пользователя"""
     model = get_user_model()
     permission_classes = [AllowAny]
     serializer_class = UserSerializer
 
 
 class UserRetrieveView(generics.RetrieveUpdateDestroyAPIView):
+    """Контроллер для управления моделью пользователя"""
     queryset = get_user_model().objects
     permission_classes = [IsAuthenticated]
     serializer_class = UserEditSerializer
@@ -21,7 +23,9 @@ class UserRetrieveView(generics.RetrieveUpdateDestroyAPIView):
     def get_object(self):
         return self.request.user
 
+
 class LoginView(APIView):
+    """Контроллер для эндпоинта авторизации"""
     permission_classes = [AllowAny]
 
     def post(self, request):
@@ -34,13 +38,14 @@ class LoginView(APIView):
             password=password,
         )
         if not user:
-            return Response("Похоже что Ваша учётная запись не активна, обратитесь к администратору")
+            return Response("Введённые данные некорректны либо Ваша учётная запись не активна")
 
         login(request, user)
         return Response("Вы успешно вошли в систему")
 
 
 class LogoutView(APIView):
+    """Контроллер для эндпоинта выхода из системы"""
     def post(self, request):
         logout(request)
         return Response("Вы успешно вышли из системы")

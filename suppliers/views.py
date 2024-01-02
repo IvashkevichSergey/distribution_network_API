@@ -1,35 +1,36 @@
-from django.contrib.auth import login, logout
 from rest_framework import generics, viewsets
 from rest_framework.filters import SearchFilter
-from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from rest_framework.authentication import authenticate
 from suppliers.models import Supplier, Contacts, Products
 from suppliers.serializers import SuppliersListSerializer, SupplierSerializer, ContactsSerializer, ProductsSerializer, \
     SupplierUpdateSerializer
 
 
 class SupplierCreateApiView(generics.CreateAPIView):
+    """Контроллер для создания нового объекта сервиса"""
     serializer_class = SupplierSerializer
+    queryset = Supplier.objects.all()
 
 
 class SupplierRetrieveApiView(generics.RetrieveAPIView):
+    """Контроллер для просмотра информации об объекте"""
     serializer_class = SuppliersListSerializer
     queryset = Supplier.objects.all()
 
 
 class SupplierUpdateApiView(generics.UpdateAPIView):
+    """Контроллер для изменения данных об объекте"""
     serializer_class = SupplierUpdateSerializer
     queryset = Supplier.objects.all()
 
 
 class SupplierDeleteApiView(generics.DestroyAPIView):
+    """Контроллер для удаления объекта"""
     serializer_class = SupplierSerializer
     queryset = Supplier.objects.all()
 
 
 class SupplierListApiView(generics.ListAPIView):
+    """Контроллер для просмотра списка объектов"""
     serializer_class = SuppliersListSerializer
     queryset = Supplier.objects.all()
     filter_backends = [SearchFilter]
@@ -37,10 +38,12 @@ class SupplierListApiView(generics.ListAPIView):
 
 
 class ContactsViewSet(viewsets.ModelViewSet):
+    """Контроллер для управления моделью контактов"""
     serializer_class = ContactsSerializer
     queryset = Contacts.objects.all()
 
 
 class ProductsViewSet(viewsets.ModelViewSet):
+    """Контроллер для управления моделью продуктов"""
     serializer_class = ProductsSerializer
     queryset = Products.objects.all()
